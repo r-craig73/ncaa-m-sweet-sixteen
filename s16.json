@@ -1,0 +1,18 @@
+{"colleges":[
+  { "name":"Duke (East 1)", "threepercentage":30.2, "appearances":35 },
+  { "name":"Virginia Tech (East 4)", "threepercentage":39.4, "appearances":3 },
+  { "name":"LSU (East 3)", "threepercentage":32.3, "appearances":1 },
+  { "name":"Michigan State (East 2)", "threepercentage":38.3, "appearances":22 },
+  { "name":"Gonzaga (West 1)", "threepercentage":36.5, "appearances":20 },
+  { "name":"Florida State (West 4)", "threepercentage":33.6, "appearances":3 },
+  { "name":"Texas Tech (West 3)", "threepercentage":36.8, "appearances":2 },
+  { "name":"Michigan (West 2)", "threepercentage":35.1, "appearances":9 },
+  { "name":"Virginia (South 1)", "threepercentage":40.9, "appearances":7 },
+  { "name":"Oregon (South 12)", "threepercentage":34.3, "appearances":6 },
+  { "name":"Purdue (South 3)", "threepercentage":36.4, "appearances":11},
+  { "name":"Tennessee (South 2)", "threepercentage":35.8, "appearances":2 },
+  { "name":"North Carolina (Midwest 1)", "threepercentage":36.5, "appearances":15 },
+  { "name":"Auburn (Midwest 5)", "threepercentage":37.6, "appearances":2 },
+  { "name":"Houston (Midwest 3)", "threepercentage":36.4, "appearances":2 },
+  { "name":"Kentucky (Midwest 2)", "threepercentage":36.4, "appearances":2}
+]}
