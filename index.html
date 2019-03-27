@@ -7,73 +7,123 @@
     <link href="css/styles.css" rel="stylesheet" type="text/css">
     <script src="js/jquery-3.3.1.js"></script>
     <script src="js/scripts.js"></script>
-    <meta charset="utf-8">
   </head>
   <body>
     <div class="container">
       <div class="jumbotron jumbotron-fluid">
-          <h1>NCAA Men's Sweet 16 Predictor</h1>
-          <h2>Can't predict who will win the next round?  Then use the predictor!</h2>
-          <h3>Select two different teams to predict the winner.</h3>
+        <h1>NCAA Men's Sweet 16 Predictor</h1>
+        <h2>Can't predict who will win the next round?  Then use the predictor!</h2>
+        <h3>Select two different teams to predict the winner.</h3>
       </div>
-        <br>
         <div class="container">
-          <div class="row">
-            <div class="col-sm">
-              <div class="form-group">
-                  <h3><label for="Team01">Team #1</label></h3>
-                  <select class="form-control" id="Team01">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                    <option>6</option>
-                    <option>7</option>
-                    <option>8</option>
-                    <option>9</option>
-                    <option>10</option>
-                    <option>11</option>
-                    <option>12</option>
-                    <option>13</option>
-                    <option>14</option>
-                    <option>15</option>
-                    <option>16</option>
-                  </select>
-              </div>
-            </div>
-            <div class="col-sm">
-              <h3>vs.</h3>
-            </div>
-            <div class="col-sm">
-                <div class="form-group">
-                    <h3><label for="Team02">Team #2</label></h3>
-                    <select class="form-control" id="Team02">
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
-                      <option>4</option>
-                      <option>5</option>
-                      <option>6</option>
-                      <option>7</option>
-                      <option>8</option>
-                      <option>9</option>
-                      <option>10</option>
-                      <option>11</option>
-                      <option>12</option>
-                      <option>13</option>
-                      <option>14</option>
-                      <option>15</option>
-                      <option>16</option>
+          <form id="team-selections">
+            <div class="row">
+              <div class="col-sm">
+                <div class="form-group01">
+                    <h3><label for="team01">Team #1 (Region & seed)</label></h3>
+                    <select class="form-control-file" id="team01">
+                      <option>Duke (East 1)</option>
+                      <option>Virginia Tech (East 4)</option>
+                      <option>LSU (East 3)</option>
+                      <option>Michigan State (East 2)</option>
+                      <option>Gonzaga (West 1)</option>
+                      <option>Florida State (West 4)</option>
+                      <option>Texas Tech (West 3)</option>
+                      <option>Michigan (West 2)</option>
+                      <option>Virginia (South 1)</option>
+                      <option>Oregon (South 12)</option>
+                      <option>Purdue (South 3)</option>
+                      <option>Tennessee (South 2)</option>
+                      <option>North Carolina (Midwest 1)</option>
+                      <option>Auburn (Midwest 4)</option>
+                      <option>Houston (Midwest 3)</option>
+                      <option>Kentucky (Midwest 2)</option>
                     </select>
                 </div>
+              </div>
+              <div class="col-sm">
+                <h3>vs.</h3>
+              </div>
+              <div class="col-sm">
+                <div class="form-group02">
+                    <h3><label for="team02">Team #2 (Region & seed)</label></h3>
+                    <select class="form-control-file" id="team02">
+                      <option>Virginia Tech (East 4)</option>
+                      <option>Duke (East 1)</option>
+                      <option>LSU (East 3)</option>
+                      <option>Michigan State (East 2)</option>
+                      <option>Gonzaga (West 1)</option>
+                      <option>Florida State (West 4)</option>
+                      <option>Texas Tech (West 3)</option>
+                      <option>Michigan (West 2)</option>
+                      <option>Virginia (South 1)</option>
+                      <option>Oregon (South 12)</option>
+                      <option>Purdue (South 3)</option>
+                      <option>Tennessee (South 2)</option>
+                      <option>North Carolina (Midwest 1)</option>
+                      <option>Auburn (Midwest 4)</option>
+                      <option>Houston (Midwest 3)</option>
+                      <option>Kentucky (Midwest 2)</option>
+                    </select>
+                </div>
+              </div>
             </div>
-          </div>
+            <div class="row">
+              <div class="col-sm">
+              </div>
+              <div class="col-sm">
+                <button id="compare" type="submit" class="btn btn-info">Compare Teams</button>
+              </div>
+              <div class="col-sm">
+              </div>
+            </div>
+          </form>
+          
           <br>
-          <div class="row">
-            <div class="col-sm">
-              <button id="compare" type="button" class="btn btn-info">Compare Teams</button>
+          <div id="results">
+            <h5>
+            <div class="row">
+              <div id="team01-name" class="col-sm"></div>
+              <div class="col-sm"></div>
+              <div class="col-sm"></div>
+              <div id="team02-name" class="col-sm"></div>
             </div>
+            <div class="row">
+              <div class="col-sm">Metric</div>
+              <div class="col-sm">------</div>
+              <div class="col-sm">------</div>
+              <div class="col-sm">Metric</div>
+            </div>
+            <div class="row">
+              <div class="col-sm">3 Point %</div>
+              <div class="col-sm">Value</div>
+              <div class="col-sm">Value</div>
+              <div class="col-sm">3 Point %</div>
+            </div>
+            <div class="row">
+              <div class="col-sm">Offense Efficiency</div>
+              <div class="col-sm">Value</div>
+              <div class="col-sm">Value</div>
+              <div class="col-sm">Offense Efficiency</div>
+            </div>
+            <div class="row">
+              <div class="col-sm">Defense Efficiency</div>
+              <div class="col-sm">Value</div>
+              <div class="col-sm">Value</div>
+              <div class="col-sm">Defense Efficiency</div>
+            </div>
+            <div class="row">
+              <div class="col-sm">Tournament Appearances</div>
+              <div class="col-sm">Value</div>
+              <div class="col-sm">Value</div>
+              <div class="col-sm">Tournament Appearances</div>
+            </div>
+            </h5>
+          </div>
+
+          <br>
+          <div id="new-compare" class="row">
+            <button type="button" class="btn btn-success">New Comparison</button>
           </div>
         </div>
       </div>
