@@ -1,5 +1,5 @@
 // Business Side
-
+// TBD
 
 // User Interface Logic
 function compareTeams() {
@@ -21,8 +21,6 @@ $(document).ready(function() {
     $("#team01-name").text(team01);
     const team02 = $("#team02").val();
     $("#team02-name").text(team02);
-    console.log("Team 01: " + team01);
-    console.log("Team 02: " + team02);
     if (team01 == team02) {
       alert("Oh, Oh same team!");
       location.reload();
@@ -42,13 +40,34 @@ $(document).ready(function() {
     request.send();
 
     const getStats = function(response) {
-      console.log(response);
-      console.log(response.colleges[2].name);
-      console.log(response.colleges.length);
-      console.log(response.colleges[2].threepercentage);
-      console.log(response.colleges[2].appearances);
+      let results = [];
+      let searchField = "name";
+      let searchTeam01 = team01;
+      for (let i=0 ; i < response.colleges.length ; i++)
+      {
+        if (response.colleges[i][searchField] == searchTeam01) {
+          results.push(response.colleges[i]);
+          // console.log(response.colleges[i]);
+        }
+      }
+      let searchTeam02 = team02;
+      for (let i=0 ; i < response.colleges.length ; i++)
+      {
+        if (response.colleges[i][searchField] == searchTeam02) {
+          results.push(response.colleges[i]);
+          // console.log(response.colleges[i]);
+        }
+      }
+      console.log(results);
+      $("#team01-appearances").text(results[0].appearances);
+      $("#team02-appearances").text(results[1].appearances);
+      $("#team01-three-percentage").text(results[0].threepercentage);
+      $("#team02-three-percentage").text(results[1].threepercentage);
+      $("#team01-off-efficiency").text(results[0].offefficiency);
+      $("#team02-off-efficiency").text(results[1].offefficiency);
+      $("#team01-def-efficiency").text(results[0].defefficiency);
+      $("#team02-def-efficiency").text(results[1].defefficiency);
     }
-
     compareTeams();
   });
 
