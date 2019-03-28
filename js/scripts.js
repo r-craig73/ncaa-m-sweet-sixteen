@@ -47,7 +47,6 @@ $(document).ready(function() {
       {
         if (response.colleges[i][searchField] == searchTeam01) {
           results.push(response.colleges[i]);
-          // console.log(response.colleges[i]);
         }
       }
       let searchTeam02 = team02;
@@ -55,7 +54,6 @@ $(document).ready(function() {
       {
         if (response.colleges[i][searchField] == searchTeam02) {
           results.push(response.colleges[i]);
-          // console.log(response.colleges[i]);
         }
       }
       console.log(results);
@@ -67,6 +65,12 @@ $(document).ready(function() {
       $("#team02-off-efficiency").text(results[1].offefficiency);
       $("#team01-def-efficiency").text(results[0].defefficiency);
       $("#team02-def-efficiency").text(results[1].defefficiency);
+      $("#team01-freethrow").text(results[0].freethrow);
+      $("#team02-freethrow").text(results[1].freethrow);
+      $("#team01-turnover-per-game").text(results[0].turnoverpergame);
+      $("#team02-turnover-per-game").text(results[1].turnoverpergame);
+      $("#team01-assist-per-game").text(results[0].assistpergame);
+      $("#team02-assist-per-game").text(results[1].assistpergame);
     }
     compareTeams();
   });
