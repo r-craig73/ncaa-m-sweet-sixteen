@@ -1,5 +1,8 @@
 // Business Side
-// TBD
+function Team(name) {
+  this.name = name;
+  this.score = 0;
+}
 
 // User Interface Logic
 function compareTeams() {
@@ -18,9 +21,12 @@ $(document).ready(function() {
   $("#team-selections").submit(function(event) {
     event.preventDefault();
     const team01 = $("#team01").val();
-    $("#team01-name").text(team01);
+    let teamOne = new Team(team01);
     const team02 = $("#team02").val();
-    $("#team02-name").text(team02);
+    let teamTwo = new Team(team02);
+    console.log(teamOne.name + "vs." + teamTwo.name);
+    $("#team01-name").text(teamOne.name);
+    $("#team02-name").text(teamTwo.name);
     if (team01 == team02) {
       alert("Oh, Oh same team!");
       location.reload();
